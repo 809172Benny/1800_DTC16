@@ -6,13 +6,9 @@
 
 ## General Info
 This browser based web application to ...
-<<<<<<< HEAD
 * Hi my name is Benny. I'm excited to go home.
-=======
 
 Hi my name is David. I'm excited about this project because it seems quite interesting.
->>>>>>> 9ec2c2d27a2dc4b3d9a460740509c660b0ace6de
-	
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
