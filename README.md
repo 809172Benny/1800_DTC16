@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+Malik was here, idk what I'm doing
 	
 ## Technologies
 Technologies used for this project:
