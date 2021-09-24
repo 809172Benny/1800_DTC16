@@ -7,6 +7,8 @@
 ## General Info
 This browser based web application to ...
 Malik was here, idk what I'm doing
+
+Hi my name is David. I'm excited about this project because it seems quite interesting.
 	
 ## Technologies
 Technologies used for this project:
