@@ -13,6 +13,9 @@ Hi my name is David. I'm excited about this project because it seems exciting.
 
 Conflict
 * Gimme the conflict please.
+Malik was here, idk what I'm doing. Is all confusing
+* Hi my name is Benny. I'm excited to go home. Home is the way
+Hi my name is David. I'm excited about this project because it seems quite interesting. 
 
 ## Technologies
 Technologies used for this project:
