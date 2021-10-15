@@ -31,6 +31,48 @@
                 font-size: 3.5rem;
             }
         }
+
+        body {
+            background-color: #eee
+        }
+
+        .bdge {
+            height: 21px;
+            background-color: orange;
+            color: #fff;
+            font-size: 11px;
+            padding: 8px;
+            border-radius: 4px;
+            line-height: 3px
+        }
+
+        .comments {
+            text-decoration: underline;
+            text-underline-position: under;
+            cursor: pointer
+        }
+
+        .dot {
+            height: 7px;
+            width: 7px;
+            margin-top: 3px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block
+        }
+
+        .hit-voting:hover {
+            color: blue
+        }
+
+        .hit-voting {
+            cursor: pointer
+        }
+
+        #comment-box {
+            height: 100%;
+            width: 100%;
+        }
     </style>
 
 
@@ -49,15 +91,16 @@
             <img src="images/search_icon.png" class="img-thumbnail" alt="..." width="50" height="50">
         </div>
     </nav>
-    
+
     <br>
-    
+
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 Covid story 1
                 <br>
-                <img src="images/generic_steve.jpg" alt="" width="200" height="200" class="d-inline-block align-text-top">
+                <img src="images/generic_steve.jpg" alt="" width="200" height="200"
+                    class="d-inline-block align-text-top">
             </a>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse rhoncus lacus eget interdum ullamcorper.
@@ -72,49 +115,79 @@
     </nav>
 
 
-    <div class="container mt-5">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-8">
-                <div class="headings d-flex justify-content-between align-items-center mb-3">
-                    <h5>Comments (4)</h5>
-                    <div class="buttons"> <span class="badge bg-white d-flex flex-row align-items-center"> <span class="text-primary">Comments "ON"</span>
-                            <div class="form-check form-switch"> <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked> </div>
-                        </span> </div>
-                </div>
-                <div class="card p-3">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Very cool! </small></span> </div> <small>2 days ago</small>
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="d-flex flex-column col-md-8">
+                <div class="d-flex flex-row align-items-center text-left comment-top p-2 bg-white border-bottom px-4">
+                    <div class="profile-image"><img class="rounded-circle" src="images/generic_steve.jpg" width="70">
                     </div>
-                    <div class="action d-flex justify-content-between mt-2 align-items-center">
-                        <div class="reply px-4"> <small>Upvote</small> <span class="dots"></span> <small>Downvote</small> <span class="dots"></span> <small>Reply</small> </div>
-                        <div class="icons align-items-center"> <i class="fa fa-star text-warning"></i> <i class="fa fa-check-circle-o check-icon"></i> </div>
-                    </div>
-                </div>
-                <div class="card p-3 mt-2">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/C4egmYM.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">olan_sams</small> <small class="font-weight-bold">Super inspiring :-) </small></span> </div> <small>3 days ago</small>
-                    </div>
-                    <div class="action d-flex justify-content-between mt-2 align-items-center">
-                        <div class="reply px-4"> <small>Upvote</small> <span class="dots"></span> <small>Downvote</small> <span class="dots"></span> <small>Reply</small> </div>
-                        <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                    <div class="d-flex flex-column-reverse flex-grow-0 align-items-center votings ml-1"><i
+                            class="fa fa-sort-up fa-2x hit-voting"></i><span></span><i
+                            class="fa fa-sort-down fa-2x hit-voting"></i></div>
+                    <div class="d-flex flex-column ml-3">
+                        <div class="d-flex flex-row post-title">
+                            <h5>Comments</h5><span class="ml-2"></span>
+                        </div>
+                        <div class="d-flex flex-row align-items-center align-content-center post-title"><span
+                                class="mr-2 comments">3 comments&nbsp;</span><span>6
+                                hours ago</span></div>
                     </div>
                 </div>
-                <div class="card p-3 mt-2">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/0LKZQYM.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">rashida_jones</small> <small class="font-weight-bold">WOW!!! </small></span> </div> <small>3 days ago</small>
+                <div class="coment-bottom bg-white p-2 px-4">
+                    <div>
+                        <input type="text" placeholder="Add a comment..." id="comment-box">
                     </div>
-                    <div class="action d-flex justify-content-between mt-2 align-items-center">
-                        <div class="reply px-4"> <small>Upvote</small> <span class="dots"></span> <small>Downvote</small> <span class="dots"></span> <small>Reply</small> </div>
-                        <div class="icons align-items-center"> <i class="fa fa-user-plus text-muted"></i> <i class="fa fa-star-o text-muted"></i> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                    <div class="d-flex flex-row add-comment-section mt-4 mb-4"><button class="btn btn-primary"
+                            type="button">Comment</button></div>
+                    <div class="commented-section mt-2">
+                        <div class="d-flex flex-row align-items-center commented-user">
+                            <h5 class="mr-2">Corey oates</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">4
+                                hours ago</span>
+                        </div>
+                        <div class="comment-text-sm"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.</span></div>
+                        <div class="reply-section">
+                            <div class="d-flex flex-row align-items-center voting-icons"><i
+                                    class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
+                                    class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
+                                <h6 class="ml-2 mt-1">Reply</h6>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card p-3 mt-2">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/ZSkeqnd.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">simona_rnasi</small> <small class="font-weight-bold text-primary">@macky_lones </small> <small class="font-weight-bold text-primary">@rashida_jones</small> <small class="font-weight-bold">Thanks for sharing!     </small></span> </div> <small>3 days ago</small>
+                    <div class="commented-section mt-2">
+                        <div class="d-flex flex-row align-items-center commented-user">
+                            <h5 class="mr-2">Samoya Johns</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">5
+                                hours ago</span>
+                        </div>
+                        <div class="comment-text-sm"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua..</span></div>
+                        <div class="reply-section">
+                            <div class="d-flex flex-row align-items-center voting-icons"><i
+                                    class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
+                                    class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
+                                <h6 class="ml-2 mt-1">Reply</h6>
+                            </div>
+                        </div>
                     </div>
-                    <div class="action d-flex justify-content-between mt-2 align-items-center">
-                        <div class="reply px-4"> <small>Upvote</small> <span class="dots"></span> <small>Downvote</small> <span class="dots"></span> <small>Reply</small> </div>
-                        <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                    <div class="commented-section mt-2">
+                        <div class="d-flex flex-row align-items-center commented-user">
+                            <h5 class="mr-2">Makhaya andrew</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">10
+                                hours ago</span>
+                        </div>
+                        <div class="comment-text-sm"><span>Nunc sed id semper risus in hendrerit gravida rutrum. Non
+                                odio euismod lacinia at quis risus sed. Commodo ullamcorper a lacus vestibulum sed arcu
+                                non odio euismod. Enim facilisis gravida neque convallis a. In mollis nunc sed id.
+                                Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ultrices mi
+                                tempus imperdiet nulla malesuada pellentesque.</span></div>
+                        <div class="reply-section">
+                            <div class="d-flex flex-row align-items-center voting-icons"><i
+                                    class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
+                                    class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
+                                <h6 class="ml-2 mt-1">Reply</h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
