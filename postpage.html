@@ -17,6 +17,12 @@
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+
+    <!-- Google Icons (Material Design)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -74,45 +80,73 @@
             width: 100%;
         }
     </style>
-
-
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-
-    <!-- Google Icons (Material Design)-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body class="text-center">
+<body>
 
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <img src="images/home.png" class="img-thumbnail" alt="..." width="50" height="50">
-            <img src="images/search_icon.png" class="img-thumbnail" alt="..." width="50" height="50">
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <div class="container-fluid">
+        <a class="navbar-brand">
+            <div class="logo">
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Saved</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Navigate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="loginpage.html">Sign out</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <br>
+<br>
 
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                Covid story 1
-                <br>
-                <img src="images/generic_steve.jpg" alt="" width="200" height="200"
-                    class="d-inline-block align-text-top">
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse rhoncus lacus eget interdum ullamcorper.
-                In a bibendum enim, a convallis lorem. Suspendisse potenti.
-                Integer rutrum ex quam, eu suscipit odio sollicitudin a.
-                Nunc posuere nibh ullamcorper tortor dapibus, et bibendum nisl vehicula.
-                Sed gravida nisl et urna sollicitudin, eget pulvinar metus efficitur.
-                In libero est, tempor et libero at, ultrices laoreet magna.
-                Donec blandit ipsum non urna porta maximus.
-            </p>
-        </div>
-    </nav>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            Covid story 3
+            <br>
+            <img src="images/covidstory3.jpg" alt="" width="400" height="300" class="d-inline-block align-text-top">
+        </a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Suspendisse rhoncus lacus eget interdum ullamcorper.
+            In a bibendum enim, a convallis lorem. Suspendisse potenti.
+            Integer rutrum ex quam, eu suscipit odio sollicitudin a.
+            Nunc posuere nibh ullamcorper tortor dapibus, et bibendum nisl vehicula.
+            Sed gravida nisl et urna sollicitudin, eget pulvinar metus efficitur.
+            In libero est, tempor et libero at, ultrices laoreet magna.
+            Donec blandit ipsum non urna porta maximus.
+        </p>
+    </div>
+</nav>
 
 
     <div class="container mt-5 mb-5">
@@ -152,7 +186,8 @@
                             <div class="d-flex flex-row align-items-center voting-icons"><i
                                     class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
                                     class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
-                                <h6 class="ml-2 mt-1">Reply</h6>
+                                <h6 class="ml-2 mt-1"><button class="btn btn-primary"
+                                    type="button">Reply</button></h6>
                             </div>
                         </div>
                     </div>
@@ -167,7 +202,8 @@
                             <div class="d-flex flex-row align-items-center voting-icons"><i
                                     class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
                                     class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
-                                <h6 class="ml-2 mt-1">Reply</h6>
+                                <h6 class="ml-2 mt-1"><button class="btn btn-primary"
+                                    type="button">Reply</button></h6>
                             </div>
                         </div>
                     </div>
@@ -185,7 +221,8 @@
                             <div class="d-flex flex-row align-items-center voting-icons"><i
                                     class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
                                     class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
-                                <h6 class="ml-2 mt-1">Reply</h6>
+                                <h6 class="ml-2 mt-1"><button class="btn btn-primary"
+                                    type="button">Reply</button></h6>
                             </div>
                         </div>
                     </div>
@@ -194,14 +231,8 @@
         </div>
     </div>
 
-    <main class="form-signin">
-        <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
-
-            <footer class="navbar justify-content-evenly bg-secondary fixed-bottom">
-                <i class="material-icons">home</i>
-                <i class="material-icons">search</i>
-            </footer>
-        </div>
-</body>
+<footer class="navbar justify-content-evenly fixed-bottom">
+    <small>Copyright, DTC 16 2021</small>
+</footer>
 
 </html>
