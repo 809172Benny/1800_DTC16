@@ -60,17 +60,17 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
@@ -100,8 +100,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Navigate</a>
                     </li>
-                     <li class="nav-item">
-                    <a class="nav-link" href="govt_update.html">Updates</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="govt_update.html">Updates</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="loginpage.html">Sign out</a>
@@ -110,7 +110,8 @@
 
                 <!-- Button trigger modal -->
                 <div id="postButton">
-                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"
+                        onclick="saveUserInfo()">
                         Post
                     </button>
                 </div>
@@ -134,22 +135,35 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Title</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Title">
-                        </div>
-                        <label class="form-label" for="customFile">Upload an image</label>
-                        <input type="file" class="form-control" id="customFile" />
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Story</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Type your story here..."></textarea>
+                        <div class="container">
+                            <h1>User Profile </h1>
+                            <form>
+                                <fieldset class="mb-3" id="personalInfoFields" disabled>
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" id="nameInput" class="form-control"
+                                            placeholder="Enter your name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" id="titleInput" class="form-control"
+                                            placeholder="Enter the title">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Story</label>
+                                        <input type="text" id="storyInput" class="form-control"
+                                            placeholder="Enter your story">
+                                    </div>
+                                </fieldset>
+                                <div class="d-flex justify-content-end mt-5">
+                                    <button type="button" class="btn btn-secondary"
+                                        onclick="editUserInfo()">Edit</button>
+                                    <span style="width: 10px"></span>
+                                    <button type="button" class="btn btn-info">Post</button>
+                                </div>
+                            </form>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Post</button>
                 </div>
             </div>
         </div>
@@ -233,6 +247,7 @@
     <!-- Scripts -->
 
     <script>
+        var currentUser
         //read_display_Quote()
 
         function insertName() {
@@ -258,82 +273,69 @@
         }
         insertName();
 
-        function writeHikes() {
-            //define a variable for the collection you want to create in Firestore to populate data
-            var hikesRef = db.collection("Hikes");
+        function populateInfo() {
+            firebase.auth().onAuthStateChanged(user => {
+                // Check if user is signed in:
+                if (user) {
 
-            hikesRef.add({
-                code: "BBY01",
-                name: "Burnaby Lake Park Trail", //replace with your own city?
-                city: "Burnaby",
-                province: "BC",
-                level: "easy",
-                length: "10 km",
-                length_time: "2h 33mm"
-            });
-            hikesRef.add({
-                code: "AM01",
-                name: "Buntzen Lake Trail Trail", //replace with your own city?
-                city: "Anmore",
-                province: "BC",
-                level: "moderate",
-                length: "10.5 km",
-                length_time: "3h 17mm"
-            });
-            hikesRef.add({
-                code: "NV01",
-                name: "Mount Seymoure Trail", //replace with your own city?
-                city: "North Vancouver",
-                province: "BC",
-                level: "hard",
-                length: "8.2 km",
-                length_time: "3h 20m"
-            });
-        }
+                    //go to the correct user document by referencing to the user uid
+                    currentUser = db.collection("users").doc(user.uid)
+                    //get the document for current user.
+                    currentUser.get()
+                        .then(userDoc => {
+                            //get the data fields of the user
+                            var userName = userDoc.data().name;
+                            var userTitle = userDoc.data().title
+                            var userStory = userDoc.data().story;
 
-
-        function displayHikes() {
-            db.collection("Hikes").get()
-                .then(allHikes => {
-                    allHikes.forEach(doc => {
-                        var hikeName = doc.data().name; //gets the name field
-                        var hikeID = doc.data().code; //gets the unique ID field
-                        document.getElementById(hikeID).innerText = hikeName;
-                    })
-
-                })
-        }
-        //displayHikes();
-    </script>
-
-    <script>
-        function setHikeData(id) {
-            localStorage.setItem('hikeID', id);
-        }
-    </script>
-
-    <script>
-        db.collection("Hikes").where("code", "==", hikeID)
-            .get()
-            .then(queryHike => {
-                //see how many results you have got from the query
-                size = queryHike.size;
-                // get the documents of query
-                Hikes = queryHike.docs;
-
-                // We want to have one document per hike, so if the the result of 
-                //the query is more than one, we can check it right now and clean the DB if needed.
-                if (size = 1) {
-                    var thisHike = Hikes[0].data();
-                    name = thisHike.name;
-                    document.getElementById("HikeName").innerHTML = name;
+                            //if the data fields are not empty, then write them in to the form.
+                            if (userName != null) {
+                                document.getElementById("nameInput").value = userName;
+                            }
+                            if (userTitle != null) {
+                                document.getElementById("titleInput").value = userTitle;
+                            }
+                            if (userStory != null) {
+                                document.getElementById("storyInput").value = userStory;
+                            }
+                        })
                 } else {
-                    console.log("Query has more than one data")
+                    // No user is signed in.
+                    console.log("No user is signed in");
                 }
-            })
-            .catch((error) => {
-                console.log("Error getting documents: ", error);
             });
+        }
+
+        //call the function to run it 
+        populateInfo();
+
+        function editUserInfo() {
+            //Enable the form fields
+            document.getElementById('personalInfoFields').disabled = false;
+        }
+
+        function saveUserInfo() {
+            userName = document.getElementById('nameInput').value;       //get the value of the field with id="nameInput"
+            userTitle = document.getElementById('titleInput').value;     //get the value of the field with id="titleInput"
+            userStory = document.getElementById('storyInput').value;       //get the value of the field with id="storyInput"
+        }
+
+        currentUser.update({
+            name: userName,
+            title: userTitle,
+            story: userStory
+        })
+            .then(() => {
+                console.log("Document successfully updated!");
+            })
+
+        document.getElementById('personalInfoFields').disabled = true;
+
+        function editUserInfo() {
+            //Enable the form fields
+            document.getElementById('personalInfoFields').disabled = false;
+        }
+
     </script>
 
 </body>
