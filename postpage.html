@@ -286,7 +286,7 @@
                             var userComment = userDoc.data().comment;
 
                             if (userComment != null) {
-                                document.getElementById("commentInput").value = userComment;
+                                document.getElementById('commentInput').value = userComment;
                             }
                         })
                 } else {
@@ -300,13 +300,14 @@
         var currentUser
         function saveCommentInfo() {
             userComment = document.getElementById("commentInput").value;
-            currentUser.update({
+        }
+
+            db.collection("Comments").add({
                 comment: userComment
             })
             .then(()=> {
                 console.log("Comment successfully updated.")
             })
-        }
     </script>
 
 
