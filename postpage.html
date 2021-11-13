@@ -300,13 +300,14 @@
         var currentUser
         function saveCommentInfo() {
             userComment = document.getElementById("commentInput").value;
+        }
+
             db.collection("Comments").add({
                 comment: userComment
             })
             .then(()=> {
                 console.log("Comment successfully updated.")
             })
-        }
     </script>
 
 
