@@ -114,6 +114,39 @@
 
     <script>
 
+        function populateInfoComments() {
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+
+                    currentUser = db.collection("users").doc(user.uid)
+
+                    currentUser.get()
+                        .then(userDoc => {
+
+                            var userComment = userDoc.data().comment;
+
+                            if (userComment != null) {
+                                document.getElementById("commentInput").value = userComment;
+                            }
+                        })
+                } else {
+                    console.log("No user is signed in");
+                }
+            });
+        }
+        populateInfoComments();
+
+
+        var currentUser
+        function saveCommentInfo() {
+            userComment = document.getElementById("commentInput").value;
+            currentUser.update({
+                comment: userComment
+            })
+            .then(()=> {
+                console.log("Comment successfully updated.")
+            })
+        }
     </script>
 
 
@@ -217,7 +250,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Post Comment</button>
+                                <button type="button" class="btn btn-primary" onclick="saveCommentInfo()" >Post Comment</button>
                             </div>
                         </div>
                     </div>
