@@ -9,6 +9,10 @@
     <!-- Optional styles and scripts of your own -->
     <link type="text/css" href="styles/my_style.css">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
     <!-- Bootstrap FirebaseUI CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -23,6 +27,28 @@
     <!-- Link to the api keys for your firebase project -->
     <script src="/scripts/firebaseAPI.js"></script>
 
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
 
     <style>
         .nav-item {
@@ -40,7 +66,7 @@
             align-self: center;
         }
 
-        #postButton {
+        #post-button {
             margin-left: 65%;
         }
 
@@ -51,32 +77,10 @@
 
         }
     </style>
+
 </head>
 
 <body>
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
 
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-success">
@@ -107,236 +111,184 @@
                         <a class="nav-link" href="login.html">Sign out</a>
                     </li>
                 </ul>
-
-                <!-- Button trigger modal -->
-                <div id="postButton">
-                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"
-                        onclick="saveUserInfo()">
-                        Post
-                    </button>
-                </div>
-
             </div>
         </div>
     </nav>
 
     <br>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="p-5 mb-4 bg-light rounded-3" id="greeting-container">
+        <div class="container-fluid py-5" id="greeting-container-2">
+          <h4 class="display-5 fw-bold" id="greeting-heading">
+            Welcome! <span id="name-goes-here"></span>
+          </h4>
+          <p class="col-md-8 fs-4" id="greeting-message">Share a story!</p>
+          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#AssignmentModal">
+            Make a post
+          </button>
+        </div>
+      </div>
+    
+      <!-- Modal Add Assignment -->
+      <div class="modal fade" id="AssignmentModal" tabindex="-1" role="dialog" aria-labelledby="AssignmentModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Make a post</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="container">
-                            <h1>User Profile </h1>
-                            <form>
-                                <fieldset class="mb-3" id="personalInfoFields" disabled>
-                                    <div class="form-group">
-                                        <label>Name</label>
-                                        <input type="text" id="nameInput" class="form-control"
-                                            placeholder="Enter your name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Title</label>
-                                        <input type="text" id="titleInput" class="form-control"
-                                            placeholder="Enter the title">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Story</label>
-                                        <input type="text" id="storyInput" class="form-control"
-                                            placeholder="Enter your story">
-                                    </div>
-                                </fieldset>
-                                <div class="d-flex justify-content-end mt-5">
-                                    <button type="button" class="btn btn-secondary"
-                                        onclick="editUserInfo()">Edit</button>
-                                    <span style="width: 10px"></span>
-                                    <button type="button" class="btn btn-info">Post</button>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="AssignmentModalLabel">
+                Make a post
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <fieldset class="mb-3" id="personalInfoFields">
+                  <div class="form-group">
+                    <label>Title</label>
+                    <div class="input-group has-validation">
+                      <input type="text" id="TitleInput" class="form-control"
+                        placeholder="Title" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Story</label>
+                    <input type="text" id="StoryInput" class="form-control" placeholder="Story" />
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary" id="modal-post-button">
+                Post
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Modal for editing assignments -->
+      <div class="modal fade" id="edit_AssignmentModal" tabindex="-1" role="dialog"
+        aria-labelledby="edit_AssignmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="edit_AssignmentModalLabel">
+                Edit the Assignment
+              </h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <fieldset class="mb-3" id="edit_personalInfoFields">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <div class="input-group has-validation">
+                      <input type="text" id="edit_assignment_name_here" class="form-control" placeholder="" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Class</label>
+                    <input type="text" id="edit_class_here" class="form-control" placeholder="" />
+                  </div>
+                  <div class="form-group">
+                    <!-- Calendar -->
+                    <label>Due date</label>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <div class="input-group date" id="edit_datetimepicker1" data-target-input="nearest">
+                              <input type="text" class="form-control datetimepicker-input"
+                                data-target="#edit_datetimepicker1" id="edit_due_date_here" placeholder="" />
+                              <div class="input-group-append" data-target="#edit_datetimepicker1"
+                                data-toggle="datetimepicker">
+                                <div class="input-group-text">
+                                  <i class="fa fa-calendar"></i>📅
                                 </div>
-                            </form>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                    </form>
-                </div>
+                        <script type="text/javascript">
+                          $(function () {
+                            $("#edit_datetimepicker1").datetimepicker();
+                          });
+                        </script>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Label Color</label>
+                    <div class="color-buttons-container">
+                      <button type="button" class="btn btn-primary" id="edit_primary"
+                        onclick="change_picked_color('primary');"></button>
+                      <button type="button" class="btn btn-secondary" id="edit_secondary"
+                        onclick="change_picked_color('secondary');"></button>
+                      <button type="button" class="btn btn-success" id="edit_success"
+                        onclick="change_picked_color('success');"></button>
+                      <button type="button" class="btn btn-danger" id="edit_danger"
+                        onclick="change_picked_color('danger');"></button>
+                      <button type="button" class="btn btn-warning" id="edit_warning"
+                        onclick="change_picked_color('warning');"></button>
+                      <button type="button" class="btn btn-info" id="edit_info"
+                        onclick="change_picked_color('info');"></button>
+                      <button type="button" class="btn btn-dark" id="edit_dark"
+                        onclick="change_picked_color('dark');"></button>
+                      <button type="button" class="btn btn-violet" id="edit_violet"
+                        onclick="change_picked_color('violet');"></button>
+                      <button type="button" class="btn btn-turquoise" id="edit_turquoise"
+                        onclick="change_picked_color('turquoise');"></button>
+                      <button type="button" class="btn btn-dodgerblue" id="edit_dodgerblue"
+                        onclick="change_picked_color('dodgerblue');"></button>
+                      <button type="button" class="btn btn-greenery" id="edit_greenery"
+                        onclick="change_picked_color('greenery');"></button>
+                      <button type="button" class="btn btn-quarts" id="edit_quarts"
+                        onclick="change_picked_color('quarts');"></button>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="edit-modal-close">
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary" id="edit-modal-save-button">Save changes</button>
+              <button type="submit" class="btn btn-danger" id="edit_modal-delete-button"
+              onclick="deleteAssignment();">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <template id="hikeCardTemplate">
+        <div class="card">
+            <img class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">placeholder</h5>
+                <p class="card-length">placeholder</p>
+                <br>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                </p>
+                <a href="#" class="btn btn-primary" style="float: right">Read more</a>
             </div>
         </div>
-    </div>
+    </template> 
 
-    <!-- Banner -->
-    <div class="container-fluid bg-dark text-light p-5">
-        <div class="container bg-dark p-5">
-            <h1 class="display-4">Welcome, <span id="name-goes-here"></span></h1>
-            <hr>
+    <div class="container">
+        <div class="card-group" id="hikeCardGroup">
         </div>
     </div>
 
-    <!-- Covid Story 1 -->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                Covid story 1
-                <br>
-                <img src="images/covidstory1.jpg" alt="" width="400" height="300" class="d-inline-block align-text-top">
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse rhoncus lacus eget interdum ullamcorper.
-                In a bibendum enim, a convallis lorem. Suspendisse potenti.
-                Integer rutrum ex quam, eu suscipit odio sollicitudin a.
-                Nunc posuere nibh ullamcorper tortor dapibus, et bibendum nisl vehicula.
-                Sed gravida nisl et urna sollicitudin, eget pulvinar metus efficitur.
-                In libero est, tempor et libero at, ultrices laoreet magna.
-                Donec blandit ipsum non urna porta maximus.
-            </p>
-        </div>
-    </nav>
-
-    <br>
-
-    <!-- Covid Story 2 -->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                Covid story 2
-                <br>
-                <img src="images/covidstory2.jpg" alt="" width="400" height="300" class="d-inline-block align-text-top">
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse rhoncus lacus eget interdum ullamcorper.
-                In a bibendum enim, a convallis lorem. Suspendisse potenti.
-                Integer rutrum ex quam, eu suscipit odio sollicitudin a.
-                Nunc posuere nibh ullamcorper tortor dapibus, et bibendum nisl vehicula.
-                Sed gravida nisl et urna sollicitudin, eget pulvinar metus efficitur.
-                In libero est, tempor et libero at, ultrices laoreet magna.
-                Donec blandit ipsum non urna porta maximus.
-            </p>
-        </div>
-    </nav>
-
-    <!-- Covid Story 3 -->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="postpage.html">
-                Covid story 3
-                <br>
-                <img src="images/covidstory3.jpg" alt="" width="400" height="300" class="d-inline-block align-text-top">
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse rhoncus lacus eget interdum ullamcorper.
-                In a bibendum enim, a convallis lorem. Suspendisse potenti.
-                Integer rutrum ex quam, eu suscipit odio sollicitudin a.
-                Nunc posuere nibh ullamcorper tortor dapibus, et bibendum nisl vehicula.
-                Sed gravida nisl et urna sollicitudin, eget pulvinar metus efficitur.
-                In libero est, tempor et libero at, ultrices laoreet magna.
-                Donec blandit ipsum non urna porta maximus.
-            </p>
-        </div>
-    </nav>
-
-    <!-- Sticky Footer -->
-    <footer class="navbar justify-content-evenly fixed-bottom">
-        <small>DTC 16</small>
-    </footer>
-
-    <!-- Scripts -->
-
-    <script>
-        var currentUser
-        //read_display_Quote()
-
-        function insertName() {
-            firebase.auth().onAuthStateChanged(user => {
-                // Check if user is signed in:
-                if (user) {
-                    // Do something for the current logged-in user here: 
-                    //console.log(user.uid);
-                    //go to the correct user document by referencing to the user uid
-                    currentUser = db.collection("users").doc(user.uid)
-                    //get the document for current user.
-                    currentUser.get()
-                        .then(userDoc => {
-                            var user_Name = userDoc.data().name;
-                            //console.log(user_Name);
-                            //document.getElementById("username").innerText = n;                     //using javascript
-                            $("#name-goes-here").text(user_Name); //using jquery
-                        })
-                } else {
-                    // No user is signed in.
-                }
-            });
-        }
-        insertName();
-
-        function populateInfo() {
-            firebase.auth().onAuthStateChanged(user => {
-                // Check if user is signed in:
-                if (user) {
-
-                    //go to the correct user document by referencing to the user uid
-                    currentUser = db.collection("users").doc(user.uid)
-                    //get the document for current user.
-                    currentUser.get()
-                        .then(userDoc => {
-                            //get the data fields of the user
-                            var userName = userDoc.data().name;
-                            var userTitle = userDoc.data().title
-                            var userStory = userDoc.data().story;
-
-                            //if the data fields are not empty, then write them in to the form.
-                            if (userName != null) {
-                                document.getElementById("nameInput").value = userName;
-                            }
-                            if (userTitle != null) {
-                                document.getElementById("titleInput").value = userTitle;
-                            }
-                            if (userStory != null) {
-                                document.getElementById("storyInput").value = userStory;
-                            }
-                        })
-                } else {
-                    // No user is signed in.
-                    console.log("No user is signed in");
-                }
-            });
-        }
-
-        //call the function to run it 
-        populateInfo();
-
-        function editUserInfo() {
-            //Enable the form fields
-            document.getElementById('personalInfoFields').disabled = false;
-        }
-
-        function saveUserInfo() {
-            userName = document.getElementById('nameInput').value;       //get the value of the field with id="nameInput"
-            userTitle = document.getElementById('titleInput').value;     //get the value of the field with id="titleInput"
-            userStory = document.getElementById('storyInput').value;       //get the value of the field with id="storyInput"
-        }
-
-        currentUser.update({
-            name: userName,
-            title: userTitle,
-            story: userStory
-        })
-            .then(() => {
-                console.log("Document successfully updated!");
-            })
-
-        document.getElementById('personalInfoFields').disabled = true;
-
-        function editUserInfo() {
-            //Enable the form fields
-            document.getElementById('personalInfoFields').disabled = false;
-        }
-
-    </script>
+    <!-- SCRIPTS -->
+    <script src="/scripts/main.js"></script>
 
 </body>
 
