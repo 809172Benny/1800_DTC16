@@ -214,7 +214,7 @@
                     </div>
                 </div>
 
-                <!-- Modal Button-->
+                <!-- Reply Button-->
 
                 <div class="commented-section mt-2">
                     <div class="d-flex flex-row align-items-center commented-user">
@@ -225,11 +225,16 @@
                             do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                             consequat.</span></div>
-                    <div class="reply-section">
+                    <div class="reply">
                         <div class="d-flex flex-row align-items-center voting-icons"><i
                                 class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
                                 class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
-                            <h6 class="ml-2 mt-1"><button class="btn btn-primary" type="button">Reply</button></h6>
+                            <h6 class="ml-2 mt-1"><button class="btn btn-primary" type="button" id="replybutton" onclick="saveReplyInfo()">Reply</button></h6>
+                            <div id="replyform" style = "display:none">
+                                <form>
+                                    <input type="text" style="display:block"/>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -289,6 +294,60 @@
     <script>
 
         function populateInfoComments() {
+            function populateInfo() {
+            firebase.auth().onAuthStateChanged(user => {
+                // Check if user is signed in:
+                if (user) {
+
+                    //go to the correct user document by referencing to the user uid
+                    currentUser = db.collection("users").doc(user.uid)
+                    //get the document for current user.
+                    currentUser.get()
+                        .then(userDoc => {
+                            //get the data fields of the user
+                            var userComment = userDoc.data().comment;
+
+                            //if the data fields are not empty, then write them in to the form.
+                            if (userComment != null) {
+                                document.getElementById("commentInput").value = userComment;
+                            }
+                        })
+                } else {
+                    // No user is signed in.
+                    console.log("No user is signed in");
+                }
+            });
+        }
+
+        //call the function to run it
+        populateInfo();
+
+        function editUserInfo() {
+            //Enable the form fields
+            document.getElementById('personalInfoFields').disabled = false;
+        }
+
+        function saveCommentInfo() {
+            userName = document.getElementById('nameInput').value;       //get the value of the field with id="nameInput"
+            userTitle = document.getElementById('titleInput').value;     //get the value of the field with id="titleInput"
+            userStory = document.getElementById('storyInput').value;       //get the value of the field with id="storyInput"
+        }
+
+        currentUser.update({
+            name: userName,
+            title: userTitle,
+            story: userStory
+        })
+            .then(() => {
+                console.log("Document successfully updated!");
+            })
+
+        document.getElementById('personalInfoFields').disabled = true;
+
+        function editUserInfo() {
+            //Enable the form fields
+            document.getElementById('personalInfoFields').disabled = false;
+        }
             firebase.auth().onAuthStateChanged(user => {
                 if (user) {
 
@@ -308,14 +367,13 @@
                 }
             });
         }
-        populateInfoComments();
+        editUserInfo();
 
 
         var currentUser
         function saveCommentInfo() {
             userComment = document.getElementById("commentInput").value;
             console.log(userComment);
-            console.log("peeeeeeeeeeeeenis");
 
             db.collection("Comments").add({
                 comment: userComment
@@ -325,7 +383,8 @@
             })
         }
 
-           
+    // reply button
+
     </script>
 
 
