@@ -3,11 +3,34 @@ var currentUserName = undefined;
 function getCurrentUserUid() {
     currentUser = firebase.auth().currentUser;
     if (currentUser != null) {
-        //console.log(currentUser.uid);
+        console.log(currentUser.uid);
         return currentUser.uid;
     }
     return null;
 }
+
+function insertName() {
+    firebase.auth().onAuthStateChanged(user => {
+        // Check if user is signed in:
+        if (user) {
+            // Do something for the current logged-in user here: 
+            //console.log(user.uid);
+            //go to the correct user document by referencing to the user uid
+            currentUser = db.collection("users").doc(user.uid)
+            //get the document for current user.
+            currentUser.get()
+                .then(userDoc => {
+                    var user_Name = userDoc.data().name;
+                    //console.log(user_Name);
+                    //document.getElementById("username").innerText = n;                     //using javascript
+                    $("#name-goes-here").text(user_Name); //using jquery
+                })
+        } else {
+            // No user is signed in.
+        }
+    });
+}
+insertName();
 
 function writeStories() {
     //define a variable for the collection you want to create in Firestore to populate data
