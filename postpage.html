@@ -5,17 +5,17 @@
     <!-- Bootstrap FirebaseUI CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        
-       <!-- Firebase 8 CDNs-->
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-       <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-       <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-       <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-       
+
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
     <!-- Link to the api keys for your firebase project -->
     <script src="./scripts/firebaseAPI.js"></script>
-    
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -108,168 +108,185 @@
             height: 100%;
             width: 100%;
         }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 75px;
+            background-image: url(images/cube_logo.png);
+            background-position: center;
+            background-size: 110px;
+            justify-self: center;
+            align-self: center;
+        }
     </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-success">
-    <div class="container-fluid">
-        <a class="navbar-brand">
-            <div class="logo">
-            </div>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="main.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Saved</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Navigate</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Sign out</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<br>
-
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            This is my covid story 2
-            <br>
-            <img src="images/NV01.jpg" alt="" width="400" height="300" class="d-inline-block align-text-top">
-        </a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Suspendisse rhoncus lacus eget interdum ullamcorper.
-            In a bibendum enim, a convallis lorem. Suspendisse potenti.
-            Integer rutrum ex quam, eu suscipit odio sollicitudin a.
-            Nunc posuere nibh ullamcorper tortor dapibus, et bibendum nisl vehicula.
-            Sed gravida nisl et urna sollicitudin, eget pulvinar metus efficitur.
-            In libero est, tempor et libero at, ultrices laoreet magna.
-            Donec blandit ipsum non urna porta maximus.
-        </p>
-    </div>
-</nav>
-
-
-<div class="container mt-5 mb-5">
-    <div class="d-flex justify-content-center row">
-        <div class="d-flex flex-column col-md-8">
-            <div class="d-flex flex-row align-items-center text-left comment-top p-2 bg-white border-bottom px-4">
-                <div class="profile-image"><img class="rounded-circle" src="images/generic_steve.jpg" width="70">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <div class="logo">
                 </div>
-                <div class="d-flex flex-column-reverse flex-grow-0 align-items-center votings ml-1"><i
-                        class="fa fa-sort-up fa-2x hit-voting"></i><span></span><i
-                        class="fa fa-sort-down fa-2x hit-voting"></i></div>
-                <div class="d-flex flex-column ml-3">
-                    <div class="d-flex flex-row post-title">
-                        <h5>Comments</h5><span class="ml-2"></span>
-                    </div>
-                    <div class="d-flex flex-row align-items-center align-content-center post-title"><span
-                            class="mr-2 comments">3 comments&nbsp;</span><span>6
-                            hours ago</span></div>
-                </div>
-            </div>
-            <div class="coment-bottom bg-white p-2 px-4">
-                <div>
-                    <input type="text" placeholder="Add a comment..." id="comment-box">
-                </div>
-
-                <!-- Modal Button-->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Add a comment
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Add a comment</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <input type="text" id="commentInput" class="form-control">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" onclick="saveCommentInfo()">Post Comment</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Modal Button-->
-
-                <div class="commented-section mt-2">
-                    <div class="d-flex flex-row align-items-center commented-user">
-                        <h5 class="mr-2">Corey oates</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">4
-                            hours ago</span>
-                    </div>
-                    <div class="comment-text-sm"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat.</span></div>
-                    <div class="reply-section">
-                        <div class="d-flex flex-row align-items-center voting-icons"><i
-                                class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
-                                class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
-                            <h6 class="ml-2 mt-1"><button class="btn btn-primary" type="button">Reply</button></h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="commented-section mt-2">
-                    <div class="d-flex flex-row align-items-center commented-user">
-                        <h5 class="mr-2">Samoya Johns</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">5
-                            hours ago</span>
-                    </div>
-                    <div class="comment-text-sm"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua..</span></div>
-                    <div class="reply-section">
-                        <div class="d-flex flex-row align-items-center voting-icons"><i
-                                class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
-                                class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
-                            <h6 class="ml-2 mt-1"><button class="btn btn-primary" type="button">Reply</button></h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="commented-section mt-2">
-                    <div class="d-flex flex-row align-items-center commented-user">
-                        <h5 class="mr-2">Makhaya andrew</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">10
-                            hours ago</span>
-                    </div>
-                    <div class="comment-text-sm"><span>Nunc sed id semper risus in hendrerit gravida rutrum. Non
-                            odio euismod lacinia at quis risus sed. Commodo ullamcorper a lacus vestibulum sed arcu
-                            non odio euismod. Enim facilisis gravida neque convallis a. In mollis nunc sed id.
-                            Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ultrices mi
-                            tempus imperdiet nulla malesuada pellentesque.</span></div>
-                    <div class="reply-section">
-                        <div class="d-flex flex-row align-items-center voting-icons"><i
-                                class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
-                                class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
-                            <h6 class="ml-2 mt-1"><button class="btn btn-primary" type="button">Reply</button></h6>
-                        </div>
-                    </div>
-                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Saved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Navigate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="govt_update.html">Updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Sign out</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
+
+    <br>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                This is my covid story 2
+                <br>
+                <img src="images/NV01.jpg" alt="" width="400" height="300" class="d-inline-block align-text-top">
+            </a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse rhoncus lacus eget interdum ullamcorper.
+                In a bibendum enim, a convallis lorem. Suspendisse potenti.
+                Integer rutrum ex quam, eu suscipit odio sollicitudin a.
+                Nunc posuere nibh ullamcorper tortor dapibus, et bibendum nisl vehicula.
+                Sed gravida nisl et urna sollicitudin, eget pulvinar metus efficitur.
+                In libero est, tempor et libero at, ultrices laoreet magna.
+                Donec blandit ipsum non urna porta maximus.
+            </p>
+        </div>
+    </nav>
+
+
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="d-flex flex-column col-md-8">
+                <div class="d-flex flex-row align-items-center text-left comment-top p-2 bg-white border-bottom px-4">
+                    <div class="profile-image"><img class="rounded-circle" src="images/generic_steve.jpg" width="70">
+                    </div>
+                    <div class="d-flex flex-column-reverse flex-grow-0 align-items-center votings ml-1"><i
+                            class="fa fa-sort-up fa-2x hit-voting"></i><span></span><i
+                            class="fa fa-sort-down fa-2x hit-voting"></i></div>
+                    <div class="d-flex flex-column ml-3">
+                        <div class="d-flex flex-row post-title">
+                            <h5>Comments</h5><span class="ml-2"></span>
+                        </div>
+                        <div class="d-flex flex-row align-items-center align-content-center post-title"><span
+                                class="mr-2 comments">3 comments&nbsp;</span><span>6
+                                hours ago</span></div>
+                    </div>
+                </div>
+                <div class="coment-bottom bg-white p-2 px-4">
+                    <div>
+                        <input type="text" placeholder="Add a comment..." id="comment-box">
+                    </div>
+
+                    <!-- Modal Button-->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Add a comment
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add a comment</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="text" id="commentInput" class="form-control">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="saveCommentInfo()">Post
+                                        Comment</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Button-->
+
+                    <div class="commented-section mt-2">
+                        <div class="d-flex flex-row align-items-center commented-user">
+                            <h5 class="mr-2">Corey oates</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">4
+                                hours ago</span>
+                        </div>
+                        <div class="comment-text-sm"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.</span></div>
+                        <div class="reply-section">
+                            <div class="d-flex flex-row align-items-center voting-icons"><i
+                                    class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
+                                    class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
+                                <h6 class="ml-2 mt-1"><button class="btn btn-primary" type="button">Reply</button></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commented-section mt-2">
+                        <div class="d-flex flex-row align-items-center commented-user">
+                            <h5 class="mr-2">Samoya Johns</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">5
+                                hours ago</span>
+                        </div>
+                        <div class="comment-text-sm"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua..</span></div>
+                        <div class="reply-section">
+                            <div class="d-flex flex-row align-items-center voting-icons"><i
+                                    class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
+                                    class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
+                                <h6 class="ml-2 mt-1"><button class="btn btn-primary" type="button">Reply</button></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commented-section mt-2">
+                        <div class="d-flex flex-row align-items-center commented-user">
+                            <h5 class="mr-2">Makhaya andrew</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">10
+                                hours ago</span>
+                        </div>
+                        <div class="comment-text-sm"><span>Nunc sed id semper risus in hendrerit gravida rutrum. Non
+                                odio euismod lacinia at quis risus sed. Commodo ullamcorper a lacus vestibulum sed arcu
+                                non odio euismod. Enim facilisis gravida neque convallis a. In mollis nunc sed id.
+                                Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ultrices mi
+                                tempus imperdiet nulla malesuada pellentesque.</span></div>
+                        <div class="reply-section">
+                            <div class="d-flex flex-row align-items-center voting-icons"><i
+                                    class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
+                                    class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
+                                <h6 class="ml-2 mt-1"><button class="btn btn-primary" type="button">Reply</button></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
 
 
@@ -320,12 +337,12 @@
             db.collection("Comments").add({
                 comment: userComment
             })
-            .then(()=> {
-                console.log("Comment successfully updated.")
-            })
+                .then(() => {
+                    console.log("Comment successfully updated.")
+                })
         }
 
-           
+
     </script>
 
 
