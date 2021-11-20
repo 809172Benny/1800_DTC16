@@ -246,7 +246,21 @@
                             <div class="d-flex flex-row align-items-center voting-icons"><i
                                     class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
                                     class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
-                                <h6 class="ml-2 mt-1"><button class="btn btn-primary" type="button">Reply</button></h6>
+                                <h6 class="ml-2 mt-1">
+
+                                    <!---Reply button-->
+
+                                    <button id="replybutton" onclick="replybutton(this)">Reply</button>
+                                    <div id="replyform" style="display:none">
+                                        <form>
+                                            <input type="text" id="replyInput" style="display:block" />
+                                            <button id="submitbutton" onclick="savereplyinfo()">Submit</button>
+                                        </form>
+
+                                    </div>
+
+
+                                </h6>
                             </div>
                         </div>
                     </div>
@@ -341,6 +355,46 @@
                 })
         }
 
+        //
+        function replybutton(btn) {
+            btn.nextElementSibling.style.display = "block";
+            btn.style.display = "none"
+        }
+
+        function populateReplyComments(){
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+
+                    currentUser = db.collection("users").doc(user.uid)
+
+                    currentUser.get()
+                        .then(userDoc => {
+
+                            var userReply = userDoc.data().reply;
+
+                            if (userReply != null) {
+                                document.getElementById('replyInput').value = userReply;
+                            }
+                        })
+                } else {
+                    console.log("No user is signed in");
+                }
+            });
+        }
+        populateReplycomments();
+
+        var currentUser
+        function savereplyinfo() {
+            userReply = document.getElementById("replyInput").value;
+            console.log(userReply);
+
+            db.collection("replies").add({
+                reply: userReply
+            })
+                .then(() => {
+                    console.log("Reply successfully updated.")
+                })
+        }
 
     </script>
 
