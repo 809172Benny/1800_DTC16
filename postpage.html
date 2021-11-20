@@ -119,6 +119,10 @@
             justify-self: center;
             align-self: center;
         }
+
+        nav {
+        background-image: linear-gradient(to right, rgba(238,175,97), rgb(128, 0, 128));
+        }
     </style>
 </head>
 
@@ -294,10 +298,22 @@
                                     class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
                                     class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
                                 <h6 class="ml-2 mt-1"><button class="btn btn-primary" type="button">Reply</button></h6>
+
+                                <div class= "card">
+                                    <p class="card-text" span id="comment-goes-here">Comment should go
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <template id="commentcard">
+            
+        </template>
+        <div class="container">
+            <div class="comment-group" id="commentcardgroup">
             </div>
         </div>
     </div>
@@ -355,7 +371,36 @@
                 })
         }
 
-        //
+        //populating the comment post
+
+        function insertComment(){
+            firebase.auth().onAuthStateChanged(user => {
+            // Check if user is signed in:
+            if (user) {                                                                 
+                // Do something for the current logged-in user here: 
+                console.log(user.uid);
+                //go to the correct user document by referencing to the user uid
+                currentUser = db.collection("Comments").doc(user.uid);
+                //get the document for current user.
+                currentUser.get()
+			          .then(userDoc => {
+                   var user_Comment = userDoc.data().comment;
+                   console.log(user_Comment);
+                   //method #1:  insert with html only
+                   //document.getElementById("name-goes-here").innerText = n;    //using javascript
+                   //method #2:  insert using jquery
+                   $("#comment-goes-here").text(user_Comment);                         //using jquery
+                })
+            } else {
+                // No user is signed in.
+            }
+        });
+    }
+insertComment();
+        
+
+        //Reply button functionality
+
         function replybutton(btn) {
             btn.nextElementSibling.style.display = "block";
             btn.style.display = "none"
@@ -381,7 +426,7 @@
                 }
             });
         }
-        populateReplycomments();
+        populateReplyComments();
 
         var currentUser
         function savereplyinfo() {
