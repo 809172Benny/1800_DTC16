@@ -31,17 +31,17 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -120,68 +120,48 @@
             align-self: center;
         }
 
-        nav {
-        background-image: linear-gradient(to right, rgba(238,175,97), rgb(128, 0, 128));
+        .navbar {
+            background-image: linear-gradient(to right, rgb(247, 156, 46), rgb(128, 0, 128));
         }
     </style>
 </head>
 
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-success">
-    <div class="container-fluid">
-      <a class="navbar-brand">
-        <div class="logo">
-        </div>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="main.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Saved</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Navigate</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="govt_update.html">Updates</a>
-          </li>
-          <li class="nav-item" id="signout_button">
-            <a class="nav-link" href="login.html">Sign out</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-    <br>
-
-    <nav class="navbar navbar-light bg-light">
+    <!-- Navigation Bar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-success">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                This is my covid story 2
-                <br>
-                <img src="images/NV01.jpg" alt="" width="400" height="300" class="d-inline-block align-text-top">
+            <a class="navbar-brand">
+                <div class="logo">
+                </div>
             </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse rhoncus lacus eget interdum ullamcorper.
-                In a bibendum enim, a convallis lorem. Suspendisse potenti.
-                Integer rutrum ex quam, eu suscipit odio sollicitudin a.
-                Nunc posuere nibh ullamcorper tortor dapibus, et bibendum nisl vehicula.
-                Sed gravida nisl et urna sollicitudin, eget pulvinar metus efficitur.
-                In libero est, tempor et libero at, ultrices laoreet magna.
-                Donec blandit ipsum non urna porta maximus.
-            </p>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Saved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Navigate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="govt_update.html">Updates</a>
+                    </li>
+                    <li class="nav-item" id="signout_button">
+                        <a class="nav-link" href="login.html">Sign out</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
+    <br>
 
     <div class="container mt-5 mb-5">
         <div class="d-flex justify-content-center row">
@@ -202,9 +182,7 @@
                     </div>
                 </div>
                 <div class="coment-bottom bg-white p-2 px-4">
-                    <div>
-                        <input type="text" placeholder="Add a comment..." id="comment-box">
-                    </div>
+                    
 
                     <!-- Modal Button-->
                     <!-- Button trigger modal -->
@@ -236,212 +214,174 @@
                     </div>
 
                     <!-- Modal Button-->
+                    <!---Comment Card-->
 
-                    <div class="commented-section mt-2">
-                        <div class="d-flex flex-row align-items-center commented-user">
-                            <h5 class="mr-2">Corey oates</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">4
-                                hours ago</span>
+                    <div class="card">
+                        <div class="card-header">
                         </div>
-                        <div class="comment-text-sm"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.</span></div>
-                        <div class="reply-section">
-                            <div class="d-flex flex-row align-items-center voting-icons"><i
-                                    class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
-                                    class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
-                                <h6 class="ml-2 mt-1">
+                        <div class="card-body">
+                            <h5 class="userName">Special title treatment</h5>
+                            <p class="comment-details">With supporting text below as a natural lead-in to additional
+                                content.</p>
 
-                                    <!---Reply button-->
+                            <!-- Reply Modal button-->
 
-                                    <button id="replybutton" onclick="replybutton(this)">Reply</button>
-                                    <div id="replyform" style="display:none">
-                                        <form>
-                                            <input type="text" id="replyInput" style="display:block" />
-                                            <button id="submitbutton" onclick="savereplyinfo()">Submit</button>
-                                        </form>
-
-                                    </div>
-
-
-                                </h6>
-                            </div>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#replyModal"> Reply </button>
                         </div>
                     </div>
-                    <div class="commented-section mt-2">
-                        <div class="d-flex flex-row align-items-center commented-user">
-                            <h5 class="mr-2">Samoya Johns</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">5
-                                hours ago</span>
-                        </div>
-                        <div class="comment-text-sm"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do eiusmod tempor incididunt ut labore et dolore magna aliqua..</span></div>
-                        <div class="reply-section">
-                            <div class="d-flex flex-row align-items-center voting-icons"><i
-                                    class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
-                                    class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
-                                <h6 class="ml-2 mt-1"><button class="btn btn-primary" type="button">Reply</button></h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="commented-section mt-2">
-                        <div class="d-flex flex-row align-items-center commented-user">
-                            <h5 class="mr-2">Makhaya andrew</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">10
-                                hours ago</span>
-                        </div>
-                        <div class="comment-text-sm"><span>Nunc sed id semper risus in hendrerit gravida rutrum. Non
-                                odio euismod lacinia at quis risus sed. Commodo ullamcorper a lacus vestibulum sed arcu
-                                non odio euismod. Enim facilisis gravida neque convallis a. In mollis nunc sed id.
-                                Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ultrices mi
-                                tempus imperdiet nulla malesuada pellentesque.</span></div>
-                        <div class="reply-section">
-                            <div class="d-flex flex-row align-items-center voting-icons"><i
-                                    class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
-                                    class="fa fa-sort-down fa-2x mb-3 hit-voting"></i>
-                                <h6 class="ml-2 mt-1"><button class="btn btn-primary" type="button">Reply</button></h6>
 
-                                <div class= "card">
-                                    <p class="card-text" span id="comment-goes-here">Comment should go
-                                    </p>
+                    <!-- Reply Modal Functionality-->
+
+                    <div class="modal fade" id="replyModal" tabindex="-1" aria-labelledby="replyModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="replyModalLabel">Add a Reply</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="text" id="replyInput" class="form-control">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="saveReplyInfo()">Post
+                                        reply</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <template id="commentcard">
-            
-        </template>
-        <div class="container">
-            <div class="comment-group" id="commentcardgroup">
-            </div>
-        </div>
-    </div>
 
 
 
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+                    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+                    <!-- Option 1: Bootstrap Bundle with Popper -->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                        crossorigin="anonymous">
+                    </script>
+
+                    <!-- Option 2: Separate Popper and Bootstrap JS -->
+                    <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
 
-    <script>
+                    <script>
+                        function populateInfoComments() {
+                            firebase.auth().onAuthStateChanged(user => {
+                                if (user) {
+                                    var currentUser = db.collection("users").doc(user.uid)
+                                    currentUser.get()
+                                        .then(userDoc => {
 
-        function populateInfoComments() {
-            firebase.auth().onAuthStateChanged(user => {
-                if (user) {
+                                            var userComment = userDoc.data().comment;
 
-                    currentUser = db.collection("users").doc(user.uid)
+                                            if (userComment !== null) {
+                                                document.getElementById('commentInput').value = userComment;
+                                            }
+                                        })
+                                } else {
+                                    console.log("No user is signed in");
+                                }
+                            });
+                        }
+                        populateInfoComments();
 
-                    currentUser.get()
-                        .then(userDoc => {
 
-                            var userComment = userDoc.data().comment;
+                        var currentUser
 
-                            if (userComment != null) {
-                                document.getElementById('commentInput').value = userComment;
+                        function saveCommentInfo() {
+                            if (user) {
+                                var currentUser = db.collection("users").doc(user.uid)
+                                userComment = document.getElementById("commentInput").value;
+                                console.log(userComment);
+
+
+                                db.collection("Comments").doc().update({
+                                        comment: userComment
+                                    })
+                                    .then(() => {
+                                        console.log("Comment successfully updated.")
+                                    })
                             }
-                        })
-                } else {
-                    console.log("No user is signed in");
-                }
-            });
-        }
-        populateInfoComments();
 
+                            //populating the comment post
 
-        var currentUser
-        function saveCommentInfo() {
-            userComment = document.getElementById("commentInput").value;
-            console.log(userComment);
-
-            db.collection("Comments").add({
-                comment: userComment
-            })
-                .then(() => {
-                    console.log("Comment successfully updated.")
-                })
-        }
-
-        //populating the comment post
-
-        function insertComment(){
-            firebase.auth().onAuthStateChanged(user => {
-            // Check if user is signed in:
-            if (user) {                                                                 
-                // Do something for the current logged-in user here: 
-                console.log(user.uid);
-                //go to the correct user document by referencing to the user uid
-                currentUser = db.collection("Comments").doc(user.uid);
-                //get the document for current user.
-                currentUser.get()
-			          .then(userDoc => {
-                   var user_Comment = userDoc.data().comment;
-                   console.log(user_Comment);
-                   //method #1:  insert with html only
-                   //document.getElementById("name-goes-here").innerText = n;    //using javascript
-                   //method #2:  insert using jquery
-                   $("#comment-goes-here").text(user_Comment);                         //using jquery
-                })
-            } else {
-                // No user is signed in.
-            }
-        });
-    }
-insertComment();
-        
-
-        //Reply button functionality
-
-        function replybutton(btn) {
-            btn.nextElementSibling.style.display = "block";
-            btn.style.display = "none"
-        }
-
-        function populateReplyComments(){
-            firebase.auth().onAuthStateChanged(user => {
-                if (user) {
-
-                    currentUser = db.collection("users").doc(user.uid)
-
-                    currentUser.get()
-                        .then(userDoc => {
-
-                            var userReply = userDoc.data().reply;
-
-                            if (userReply != null) {
-                                document.getElementById('replyInput').value = userReply;
+                            function insertComment() {
+                                firebase.auth().onAuthStateChanged(user => {
+                                    // Check if user is signed in:
+                                    if (user) {
+                                        // Do something for the current logged-in user here: 
+                                        console.log(user.uid);
+                                        //go to the correct user document by referencing to the user uid
+                                        currentUser = db.collection("Stories").doc(user.uid);
+                                        //get the document for current user.
+                                        currentUser.get()
+                                            .then(userDoc => {
+                                                var user_Comment = userDoc.data().comment;
+                                                console.log(user_Comment);
+                                                //method #1:  insert with html only
+                                                //document.getElementById("name-goes-here").innerText = n;    //using javascript
+                                                //method #2:  insert using jquery
+                                                $("#comment-goes-here").text(user_Comment); //using jquery
+                                            })
+                                    } else {
+                                        // No user is signed in.
+                                    }
+                                });
                             }
-                        })
-                } else {
-                    console.log("No user is signed in");
-                }
-            });
-        }
-        populateReplyComments();
+                            insertComment();
 
-        var currentUser
-        function savereplyinfo() {
-            userReply = document.getElementById("replyInput").value;
-            console.log(userReply);
 
-            db.collection("replies").add({
-                reply: userReply
-            })
-                .then(() => {
-                    console.log("Reply successfully updated.")
-                })
-        }
+                            //Reply button functionality
 
-    </script>
+                            function replybutton(btn) {
+                                btn.nextElementSibling.style.display = "block";
+                                btn.style.display = "none"
+                            }
+
+                            function populateReplyComments() {
+                                firebase.auth().onAuthStateChanged(user => {
+                                    if (user) {
+
+                                        currentUser = db.collection("users").doc(user.uid)
+
+                                        currentUser.get()
+                                            .then(userDoc => {
+
+                                                var userReply = userDoc.data().reply;
+
+                                                if (userReply != null) {
+                                                    document.getElementById('replyInput').value = userReply;
+                                                }
+                                            })
+                                    } else {
+                                        console.log("No user is signed in");
+                                    }
+                                });
+                            }
+                            populateReplyComments();
+
+                            var currentUser
+
+                            function savereplyinfo() {
+                                userReply = document.getElementById("replyInput").value;
+                                console.log(userReply);
+
+                                db.collection("replies").add({
+                                        reply: userReply
+                                    })
+                                    .then(() => {
+                                        console.log("Reply successfully updated.")
+                                    })
+                            }
+                    </script>
 
 
 
