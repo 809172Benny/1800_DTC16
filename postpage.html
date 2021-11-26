@@ -53,47 +53,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-
         body {
             background-color: #eee
-        }
-
-        .bdge {
-            height: 21px;
-            background-color: orange;
-            color: #fff;
-            font-size: 11px;
-            padding: 8px;
-            border-radius: 4px;
-            line-height: 3px
         }
 
         .comments {
             text-decoration: underline;
             text-underline-position: under;
             cursor: pointer
-        }
-
-        .dot {
-            height: 7px;
-            width: 7px;
-            margin-top: 3px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block
         }
 
         .hit-voting:hover {
@@ -104,10 +71,6 @@
             cursor: pointer
         }
 
-        #comment-box {
-            height: 100%;
-            width: 100%;
-        }
 
         .logo {
             width: 120px;
@@ -161,6 +124,11 @@
         </div>
     </nav>
 
+    <!-- Navigation Bar ends-->
+
+    <br>
+    <br>
+    <br>
     <br>
 
     <div class="container mt-5 mb-5">
@@ -177,12 +145,11 @@
                             <h5>Comments</h5><span class="ml-2"></span>
                         </div>
                         <div class="d-flex flex-row align-items-center align-content-center post-title"><span
-                                class="mr-2 comments">3 comments&nbsp;</span><span>6
-                                hours ago</span></div>
+                                class="mr-2 comments">3 comments&nbsp;</span><span></span></div>
                     </div>
                 </div>
                 <div class="coment-bottom bg-white p-2 px-4">
-                    
+
 
                     <!-- Modal Button-->
                     <!-- Button trigger modal -->
@@ -214,15 +181,15 @@
                     </div>
 
                     <!-- Modal Button-->
+
                     <!---Comment Card-->
 
                     <div class="card">
                         <div class="card-header">
                         </div>
                         <div class="card-body">
-                            <h5 class="userName">Special title treatment</h5>
-                            <p class="comment-details">With supporting text below as a natural lead-in to additional
-                                content.</p>
+                            <h5 class="userName">Username Goes here</h5>
+                            <p class="comment-details">Comments go here</p>
 
                             <!-- Reply Modal button-->
 
@@ -271,117 +238,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
+                    <script src="/scripts/postpage.js"></script>
 
-                    <script>
-                        function populateInfoComments() {
-                            firebase.auth().onAuthStateChanged(user => {
-                                if (user) {
-                                    var currentUser = db.collection("users").doc(user.uid)
-                                    currentUser.get()
-                                        .then(userDoc => {
-
-                                            var userComment = userDoc.data().comment;
-
-                                            if (userComment !== null) {
-                                                document.getElementById('commentInput').value = userComment;
-                                            }
-                                        })
-                                } else {
-                                    console.log("No user is signed in");
-                                }
-                            });
-                        }
-                        populateInfoComments();
-
-
-                        var currentUser
-
-                        function saveCommentInfo() {
-                            if (user) {
-                                var currentUser = db.collection("users").doc(user.uid)
-                                userComment = document.getElementById("commentInput").value;
-                                console.log(userComment);
-
-
-                                db.collection("Comments").doc().update({
-                                        comment: userComment
-                                    })
-                                    .then(() => {
-                                        console.log("Comment successfully updated.")
-                                    })
-                            }
-
-                            //populating the comment post
-
-                            function insertComment() {
-                                firebase.auth().onAuthStateChanged(user => {
-                                    // Check if user is signed in:
-                                    if (user) {
-                                        // Do something for the current logged-in user here: 
-                                        console.log(user.uid);
-                                        //go to the correct user document by referencing to the user uid
-                                        currentUser = db.collection("Stories").doc(user.uid);
-                                        //get the document for current user.
-                                        currentUser.get()
-                                            .then(userDoc => {
-                                                var user_Comment = userDoc.data().comment;
-                                                console.log(user_Comment);
-                                                //method #1:  insert with html only
-                                                //document.getElementById("name-goes-here").innerText = n;    //using javascript
-                                                //method #2:  insert using jquery
-                                                $("#comment-goes-here").text(user_Comment); //using jquery
-                                            })
-                                    } else {
-                                        // No user is signed in.
-                                    }
-                                });
-                            }
-                            insertComment();
-
-
-                            //Reply button functionality
-
-                            function replybutton(btn) {
-                                btn.nextElementSibling.style.display = "block";
-                                btn.style.display = "none"
-                            }
-
-                            function populateReplyComments() {
-                                firebase.auth().onAuthStateChanged(user => {
-                                    if (user) {
-
-                                        currentUser = db.collection("users").doc(user.uid)
-
-                                        currentUser.get()
-                                            .then(userDoc => {
-
-                                                var userReply = userDoc.data().reply;
-
-                                                if (userReply != null) {
-                                                    document.getElementById('replyInput').value = userReply;
-                                                }
-                                            })
-                                    } else {
-                                        console.log("No user is signed in");
-                                    }
-                                });
-                            }
-                            populateReplyComments();
-
-                            var currentUser
-
-                            function savereplyinfo() {
-                                userReply = document.getElementById("replyInput").value;
-                                console.log(userReply);
-
-                                db.collection("replies").add({
-                                        reply: userReply
-                                    })
-                                    .then(() => {
-                                        console.log("Reply successfully updated.")
-                                    })
-                            }
-                    </script>
+                    
 
 
 
