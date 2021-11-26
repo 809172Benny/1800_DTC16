@@ -2,278 +2,224 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Optional styles and scripts of your own -->
-    <link type="text/css" href="styles/my_style.css">
+  <!-- Optional styles and scripts of your own -->
+  <link type="text/css" href="styles/my_style.css">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
-    <!-- Bootstrap FirebaseUI CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Bootstrap FirebaseUI CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- Firebase 8 CDNs-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <!-- Firebase 8 CDNs-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
-    <!-- Link to the api keys for your firebase project -->
-    <script src="/scripts/firebaseAPI.js"></script>
+  <!-- Link to the api keys for your firebase project -->
+  <script src="/scripts/firebaseAPI.js"></script>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+  <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
 
-    <style>
-        .nav-item {
-            color: purple;
-        }
+  <style>
+    .nav-item {
+      color: purple;
+    }
 
-        .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 75px;
-            background-image: url(images/cube_logo.png);
-            background-position: center;
-            background-size: 110px;
-            justify-self: center;
-            align-self: center;
-        }
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 75px;
+      background-image: url(images/cube_logo.png);
+      background-position: center;
+      background-size: 110px;
+      justify-self: center;
+      align-self: center;
+    }
 
-        #post-button {
-            margin-left: 65%;
-        }
+    #post-button {
+      margin-left: 65%;
+    }
 
-        @media only screen and (max-width: 400px) {
-            #postButton {
-                float: right;
-            }
+    #greeting-container {
+      margin-top: 5%;
+    }
 
-        }
-    </style>
+    #signout_button {
+      justify-self: right;
+    }
+
+    @media only screen and (max-width: 400px) {
+      #postButton {
+        float: right;
+      }
+
+      #greeting-container {
+      margin-top: 15%;
+      }
+
+    }
+  </style>
 
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-success">
-        <div class="container-fluid">
-            <a class="navbar-brand">
-                <div class="logo">
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Saved</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Navigate</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="govt_update.html">Updates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Sign out</a>
-                    </li>
-                </ul>
-            </div>
+  <!-- Navigation Bar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-success">
+    <div class="container-fluid">
+      <a class="navbar-brand">
+        <div class="logo">
         </div>
-    </nav>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Saved</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Navigate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="govt_update.html">Updates</a>
+          </li>
+          <li class="nav-item" id="signout_button">
+            <a class="nav-link" href="login.html">Sign out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <br>
+  <br>
 
-    <div class="p-5 mb-4 bg-light rounded-3" id="greeting-container">
-        <div class="container-fluid py-5" id="greeting-container-2">
-          <h4 class="display-5 fw-bold" id="greeting-heading">
-            Welcome! <span id="name-goes-here"></span>
-          </h4>
-          <p class="col-md-8 fs-4" id="greeting-message">Share a story!</p>
-          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#AssignmentModal">
+  <div class="p-5 mb-4 bg-light rounded-3" id="greeting-container">
+    <div class="container-fluid py-5" id="greeting-container-2">
+      <h4 class="display-5 fw-bold" id="greeting-heading">
+        Welcome! <span id="name-goes-here"></span>
+      </h4>
+      <p class="col-md-8 fs-4" id="greeting-message">Share a story!</p>
+      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#AssignmentModal">
+        Make a post
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal Add Assignment -->
+  <div class="modal fade" id="AssignmentModal" tabindex="-1" role="dialog" aria-labelledby="AssignmentModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="AssignmentModalLabel">
             Make a post
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <fieldset class="mb-3" id="personalInfoFields">
+              <div class="form-group">
+                <label>Title</label>
+                <div class="input-group has-validation">
+                  <input type="text" id="TitleInput" class="form-control" placeholder="Title" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Story</label>
+                <input type="text" id="StoryInput" class="form-control" placeholder="Story" />
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="submit" class="btn btn-primary" id="modal-post-button" data-dismiss="modal" onclick="writeUserStory()">
+            Post
           </button>
         </div>
       </div>
-    
-      <!-- Modal Add Assignment -->
-      <div class="modal fade" id="AssignmentModal" tabindex="-1" role="dialog" aria-labelledby="AssignmentModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="AssignmentModalLabel">
-                Make a post
-              </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <fieldset class="mb-3" id="personalInfoFields">
-                  <div class="form-group">
-                    <label>Title</label>
-                    <div class="input-group has-validation">
-                      <input type="text" id="TitleInput" class="form-control"
-                        placeholder="Title" />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label>Story</label>
-                    <input type="text" id="StoryInput" class="form-control" placeholder="Story" />
-                  </div>
-                </fieldset>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                Close
-              </button>
-              <button type="submit" class="btn btn-primary" id="modal-post-button">
-                Post
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <!-- Modal for editing assignments -->
-      <div class="modal fade" id="edit_AssignmentModal" tabindex="-1" role="dialog"
-        aria-labelledby="edit_AssignmentModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="edit_AssignmentModalLabel">
-                Edit the Assignment
-              </h5>
-              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <fieldset class="mb-3" id="edit_personalInfoFields">
-                  <div class="form-group">
-                    <label>Name</label>
-                    <div class="input-group has-validation">
-                      <input type="text" id="edit_assignment_name_here" class="form-control" placeholder="" />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label>Class</label>
-                    <input type="text" id="edit_class_here" class="form-control" placeholder="" />
-                  </div>
-                  <div class="form-group">
-                    <!-- Calendar -->
-                    <label>Due date</label>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <div class="input-group date" id="edit_datetimepicker1" data-target-input="nearest">
-                              <input type="text" class="form-control datetimepicker-input"
-                                data-target="#edit_datetimepicker1" id="edit_due_date_here" placeholder="" />
-                              <div class="input-group-append" data-target="#edit_datetimepicker1"
-                                data-toggle="datetimepicker">
-                                <div class="input-group-text">
-                                  <i class="fa fa-calendar"></i>📅
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <script type="text/javascript">
-                          $(function () {
-                            $("#edit_datetimepicker1").datetimepicker();
-                          });
-                        </script>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label>Label Color</label>
-                    <div class="color-buttons-container">
-                      <button type="button" class="btn btn-primary" id="edit_primary"
-                        onclick="change_picked_color('primary');"></button>
-                      <button type="button" class="btn btn-secondary" id="edit_secondary"
-                        onclick="change_picked_color('secondary');"></button>
-                      <button type="button" class="btn btn-success" id="edit_success"
-                        onclick="change_picked_color('success');"></button>
-                      <button type="button" class="btn btn-danger" id="edit_danger"
-                        onclick="change_picked_color('danger');"></button>
-                      <button type="button" class="btn btn-warning" id="edit_warning"
-                        onclick="change_picked_color('warning');"></button>
-                      <button type="button" class="btn btn-info" id="edit_info"
-                        onclick="change_picked_color('info');"></button>
-                      <button type="button" class="btn btn-dark" id="edit_dark"
-                        onclick="change_picked_color('dark');"></button>
-                      <button type="button" class="btn btn-violet" id="edit_violet"
-                        onclick="change_picked_color('violet');"></button>
-                      <button type="button" class="btn btn-turquoise" id="edit_turquoise"
-                        onclick="change_picked_color('turquoise');"></button>
-                      <button type="button" class="btn btn-dodgerblue" id="edit_dodgerblue"
-                        onclick="change_picked_color('dodgerblue');"></button>
-                      <button type="button" class="btn btn-greenery" id="edit_greenery"
-                        onclick="change_picked_color('greenery');"></button>
-                      <button type="button" class="btn btn-quarts" id="edit_quarts"
-                        onclick="change_picked_color('quarts');"></button>
-                    </div>
-                  </div>
-                </fieldset>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="edit-modal-close">
-                Close
-              </button>
-              <button type="submit" class="btn btn-primary" id="edit-modal-save-button">Save changes</button>
-              <button type="submit" class="btn btn-danger" id="edit_modal-delete-button"
-              onclick="deleteAssignment();">Delete</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+  </div>
 
-      <template id="hikeCardTemplate">
+  <!-- Templates for general use, not displayed -->
+  <!-- <template id="CardTemplate">
+    <div class="card py-2 mx-2" style="width: 18rem;">
+      <img class="card-image card-img-top" src=" ..." alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+          card's content.</p>
+        <a class="btn btn-primary card-href">Get Details</a>
+      </div>
+    </div>
+  </template> -->
+
+  <!-- <div class="container">
+    <h1>Timeline</h1> -->
+    <!-- Here is container for cards  -->
+    <!-- <div class="container">
+      <div id="hikes-go-here" class="row row-cols-auto">
+
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="container">
+    <h1>Details</h1> -->
+    <!-- Here is container for cards  -->
+    <!-- <div class="container">
+      <div id="details-go-here">
+      </div>
+    </div>
+  </div> -->
+
+  <template id="hikeCardTemplate">
         <div class="card">
             <img class="card-img-top">
             <div class="card-body">
-                <h5 class="card-title">placeholder</h5>
-                <p class="card-length">placeholder</p>
+                <h5 class="card-title"></h5>
+                <p class="card-user"></p>
                 <br>
                 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
                 </p>
@@ -287,8 +233,8 @@
         </div>
     </div>
 
-    <!-- SCRIPTS -->
-    <script src="/scripts/main.js"></script>
+  <!-- SCRIPTS -->
+  <script src="/scripts/main.js"></script>
 
 </body>
 
