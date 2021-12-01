@@ -80,14 +80,14 @@ function displayHikes() {
                 var hikeID = doc.data().code; //gets the unique ID field
                 var hikeStory = doc.data().Story; //gets the name field
                 var hikeUser = doc.data().UserName; //gets the length field
-                var hikeTime = doc.data().Time; //gets the time
+                // var hikeTime = doc.data().Time; //gets the time
                 let testHikeCard = hikeCardTemplate.content.cloneNode(true);
                 testHikeCard.querySelector('.card-title').innerHTML = hikeName;
-                testHikeCard.querySelector('.card-user').innerHTML = hikeUser;
+                testHikeCard.querySelector('.card-user').innerHTML = "Posted by: " + hikeUser;
                 testHikeCard.querySelector('.card-text').innerHTML = hikeStory;
-                testHikeCard.querySelector('.card-time').innerHTML = hikeTime;
+                // testHikeCard.querySelector('.card-time').innerHTML = hikeTime;
                 testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);
-                testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;
+                testHikeCard.querySelector('img').src = `./images/AM01.jpg`;
                 hikeCardGroup.appendChild(testHikeCard);
             })
 
