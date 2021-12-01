@@ -50,12 +50,6 @@
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-
-    <!-- Google Icons (Material Design)-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <style>
         body {
             background-color: #eee
@@ -177,7 +171,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" onclick="saveCommentInfo()">Post
+                                    <button type="button" class="btn btn-primary" onclick="saveCommentInfo()" data-bs-dismiss="modal">Post
                                         Comment</button>
                                 </div>
                             </div>
@@ -188,17 +182,24 @@
 
                     <!---Comment Card-->
 
-                    <div class="card">
-                        <div class="card-header">
+                    <template id="hikeCardTemplate">
+                        <div class="card">
+                            <img class="card-img-top">
+                            <div class="card-body">
+                                <h6 class="card-user"></h6>
+                                <br>
+                                <p class="card-title"></p>
+                                <!-- <p class="card-time"></p> -->
+                                <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content. -->
+                                <!-- </p> -->
+                                <!-- <a href="postpage.html" class="btn btn-primary" style="float: right">Read more</a> -->
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="userName">Username Goes here</h5>
-                            <p class="comment-details">Comments go here</p>
-
-                            <!-- Reply Modal button-->
-
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#replyModal"> Reply </button>
+                    </template> 
+                    
+                    <div class="container">
+                        <br>
+                        <div class="card-group" id="hikeCardGroup">
                         </div>
                     </div>
 
@@ -227,140 +228,9 @@
                     </div>
 
 
+<!-- Scripts -->                   
 
-
-<script>
-var currentUserName = undefined;
-
-function getCurrentUserUid() {
-    currentUser = firebase.auth().currentUser;
-    if (currentUser != null) {
-        console.log(currentUser.uid);
-        return currentUser.uid;
-    }
-    return null;
-}
-
-function populateInfoComments() {
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            var currentUser = db.collection("users").doc(user.uid)
-            currentUser.get()
-                .then(userDoc => {
-
-                    var userComment = userDoc.data().comment;
-
-                    if (userComment !== null) {
-                        document.getElementById('commentInput').value = userComment;
-                    }
-                })
-        } else {
-            console.log("No user is signed in");
-        }
-    });
-}
-populateInfoComments();
-
-
-function saveCommentInfo() {
-    userComment = document.getElementById("commentInput").value;
-    console.log(userComment);
-    firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                var currentUser = db.collection("users").doc(user.uid);
-                
-
-
-                db.collection("Comments").add({
-                        comment: userComment
-                    })
-                    .then(() => {
-                        console.log("Comment successfully updated.")
-                    });
-            }
-        });
-    }
-    //populating the comment post
-console.log('loaded')
-    function insertComment() {
-        firebase.auth().onAuthStateChanged(user => {
-            // Check if user is signed in:
-            if (user) {
-                // Do something for the current logged-in user here: 
-                console.log(user.uid);
-                //go to the correct user document by referencing to the user uid
-                currentUser = db.collection("Comments").doc(user.uid);
-                //get the document for current user.
-                currentUser.get()
-                    .then(userDoc => {
-                        var user_Comment = userDoc.data().comment;
-                        console.log(user_Comment);
-                        //method #1:  insert with html only
-                        //document.getElementById("name-goes-here").innerText = n;    //using javascript
-                        //method #2:  insert using jquery
-                        $("#comment-goes-here").text(
-                            user_Comment); //using jquery
-                    })
-            } else {
-                // No user is signed in.
-            }
-        });
-    }
-    insertComment();
-
-
-    //Reply button functionality
-
-    function replybutton(btn) {
-        btn.nextElementSibling.style.display = "block";
-        btn.style.display = "none"
-    }
-
-    function populateReplyComments() {
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-
-                currentUser = db.collection("users").doc(user.uid)
-
-                currentUser.get()
-                    .then(userDoc => {
-
-                        var userReply = userDoc.data().reply;
-
-                        if (userReply != null) {
-                            document.getElementById('replyInput').value =
-                                userReply;
-                        }
-                    })
-            } else {
-                console.log("No user is signed in");
-            }
-        });
-    }
-    populateReplyComments();
-
-    var currentUser
-
-    function savereplyinfo() {
-        userReply = document.getElementById("replyInput").value;
-        console.log(userReply);
-
-        db.collection("replies").add({
-                reply: userReply
-            })
-            .then(() => {
-                console.log("Reply successfully updated.")
-            })
-    }        
-</script>
-
-
-
-
-
-
-
-
+<script src="/scripts/postpage.js"></script>
 
 </body>
 

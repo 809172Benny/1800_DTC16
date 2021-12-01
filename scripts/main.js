@@ -31,7 +31,7 @@ function writeUserStory() {
                         UserName: userName,
                         Title: Title,
                         Story: Story,
-                        Time: Date.now()
+                        Time: firebase.firestore.FieldValue.serverTimestamp()
                     });
                 })
         } else {
