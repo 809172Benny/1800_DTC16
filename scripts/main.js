@@ -17,7 +17,7 @@ function writeUserStory() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid);
-            var userID = user.uid;
+            var userID = user.uid;  
             //get the document for current user.
             currentUser.get()
                 .then(userDoc => {
@@ -69,28 +69,34 @@ function insertName() {
 }
 insertName();
 
-function displayHikes() {
-    let hikeCardTemplate = document.getElementById("hikeCardTemplate");
-    let hikeCardGroup = document.getElementById("hikeCardGroup");
+function displayStories() {
+    let storyCardTemplate = document.getElementById("storyCardTemplate");
+    let storyCardGroup = document.getElementById("storyCardGroup");
 
     db.collection("Stories").get()
         .then(snap => {
             snap.forEach(doc => {
-                var hikeName = doc.data().Title; //gets the name field
-                var hikeID = doc.data().code; //gets the unique ID field
-                var hikeStory = doc.data().Story; //gets the name field
-                var hikeUser = doc.data().UserName; //gets the length field
-                // var hikeTime = doc.data().Time; //gets the time
-                let testHikeCard = hikeCardTemplate.content.cloneNode(true);
-                testHikeCard.querySelector('.card-title').innerHTML = hikeName;
-                testHikeCard.querySelector('.card-user').innerHTML = "Posted by: " + hikeUser;
-                testHikeCard.querySelector('.card-text').innerHTML = hikeStory;
-                // testHikeCard.querySelector('.card-time').innerHTML = hikeTime;
-                testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);
-                testHikeCard.querySelector('img').src = `./images/AM01.jpg`;
-                hikeCardGroup.appendChild(testHikeCard);
+                var storyName = doc.data().Title; //gets the name field
+                var storyID = doc.data().code; //gets the unique ID field
+                var Story = doc.data().Story; //gets the name field
+                var storyUser = doc.data().UserName; //gets the length field
+                // var storyTime = doc.data().Time; //gets the time
+                let testStoryCard = storyCardTemplate.content.cloneNode(true);
+                testStoryCard.querySelector('.card-title').innerHTML = storyName;
+                testStoryCard.querySelector('.card-user').innerHTML = "Posted by: " + storyUser;
+                testStoryCard.querySelector('.card-text').innerHTML = Story;
+                // testStoryCard.querySelector('.card-time').innerHTML = storyTime;
+                testStoryCard.querySelector('a').onclick = () => setStoryData(storyID);
+                testStoryCard.querySelector('img').src = `./images/AM01.jpg`;
+                storyCardGroup.appendChild(testStoryCard);
             })
 
         })
 }
-displayHikes();
+displayStories();
+
+function deleteCard() {
+    const db = getFirestore(app);
+    const docRef = doc(db, 'Stories');
+    docRef.delete(); 
+}

@@ -130,9 +130,9 @@ function savereplyinfo() {
         })
 }
 
-function displayHikes() {
-    let hikeCardTemplate = document.getElementById("hikeCardTemplate");
-    let hikeCardGroup = document.getElementById("hikeCardGroup");
+function displayComments() {
+    let commentCardTemplate = document.getElementById("commentCardTemplate");
+    let commentCardGroup = document.getElementById("commentCardGroup");
 
     db.collection("Comments").get()
         .then(snap => {
@@ -140,21 +140,21 @@ function displayHikes() {
                 var userComment = doc.data().comment; //gets the name field
                 // var hikeID = doc.data().code; //gets the unique ID field
                 // var hikeStory = doc.data().Story; //gets the name field
-                var hikeUser = doc.data().UserName; //gets the length field
+                var commentUser = doc.data().UserName; //gets the length field
                 // var hikeTime = doc.data().Time; //gets the time
-                let testHikeCard = hikeCardTemplate.content.cloneNode(true);
-                testHikeCard.querySelector('.card-title').innerHTML = userComment;
-                testHikeCard.querySelector('.card-user').innerHTML = "Posted by: " + hikeUser;
+                let testCommentCard = commentCardTemplate.content.cloneNode(true);
+                testCommentCard.querySelector('.card-title').innerHTML = userComment;
+                testCommentCard.querySelector('.card-user').innerHTML = "Posted by: " + commentUser;
                 // testHikeCard.querySelector('.card-text').innerHTML = hikeStory;
                 // testHikeCard.querySelector('.card-time').innerHTML = hikeTime;
                 // testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);
                 // testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;
-                hikeCardGroup.appendChild(testHikeCard);
+                commentCardGroup.appendChild(testCommentCard);
             })
 
         })
 }
-displayHikes();
+displayComments();
 
 db.collection('Comments').get().then(snap => {
     size = snap.size // will return the collection size

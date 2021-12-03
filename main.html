@@ -79,16 +79,16 @@
     }
 
     .navbar {
-            background-image: linear-gradient(to right, rgb(247, 156, 46), rgb(128, 0, 128));
-        }
-
+      background-image: linear-gradient(to right, rgb(247, 156, 46), rgb(128, 0, 128));
+    }
+    
     @media only screen and (max-width: 400px) {
       #postButton {
         float: right;
       }
 
       #greeting-container {
-      margin-top: 15%;
+        margin-top: 15%;
       }
 
     }
@@ -119,6 +119,11 @@
           <li class="nav-item">
             <a class="nav-link" href="govt_update.html">Updates</a>
           </li>
+          <!-- <li>
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="mySearch">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+              onclick="displaysearchResults()">Search</button>
+          </li> -->
           <li class="nav-item" id="signout_button">
             <a class="nav-link" href="login.html">Sign out</a>
           </li>
@@ -175,7 +180,8 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal">
             Close
           </button>
-          <button type="submit" class="btn btn-primary" id="modal-post-button" data-dismiss="modal" onclick="writeUserStory()">
+          <button type="submit" class="btn btn-primary" id="modal-post-button" data-dismiss="modal"
+            onclick="writeUserStory()">
             Post
           </button>
         </div>
@@ -183,25 +189,27 @@
     </div>
   </div>
 
-  <template id="hikeCardTemplate">
-        <div class="card">
-            <img class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-user"></p>
-                <p class="card-time"></p>
-                <br>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                </p>
-                <a href="postpage.html" class="btn btn-primary" style="float: right">Read more</a>
-            </div>
-        </div>
-    </template> 
-
-    <div class="container">
-        <div class="card-group" id="hikeCardGroup">
-        </div>
+  <!-- Story card template -->
+  <template id="storyCardTemplate">
+    <div class="card">
+      <img class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-user"></p>
+        <p class="card-time"></p>
+        <br>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+        </p>
+        <a href="postpage.html" class="btn btn-primary" style="float: right">Read more</a>
+      </div>
     </div>
+  </template>
+
+  <!-- Story card -->
+  <div class="container">
+    <div class="card-group" id="storyCardGroup">
+    </div>
+  </div>
 
   <!-- SCRIPTS -->
   <script src="/scripts/main.js"></script>
