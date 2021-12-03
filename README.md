@@ -5,10 +5,10 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
+This browser based web application to create a sense of community in the online word for those who feel disconnected and lonely in these challenging covid times.
 
+Our web application, Place, is a social media site where the aim is to promote social connectivity to ease the isolation.
 
-Hi my name is David. I'm excited about this project because it seems exciting.
 
 
 
