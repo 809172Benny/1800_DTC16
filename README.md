@@ -6,23 +6,17 @@
 
 ## General Info
 This browser based web application to ...
-Malik was here, idk what I'm doing
-* Hi my name is Benny. I'm excited to go home.
+
 
 Hi my name is David. I'm excited about this project because it seems exciting.
 
-Conflict
-* Gimme the conflict please.
-Malik was here, idk what I'm doing. Is all confusing
-* Hi my name is Benny. I'm excited to go home. Home is the way
-Hi my name is David. I'm excited about this project because it seems quite interesting. 
+
 
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap 
-* ...
 	
 ## Content
 Content of the project folder:
@@ -30,17 +24,31 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
-└── README.md
+├── login.html              # landing HTML file, this is what users see when you come to url
+├── main.html               # next HTML file after user has logged successfully logged in.
+├── postpage.html           # hTML file when a post is clicked.
+├── govt_update.html        # hTML file for our government covid links.
+├── edit_profile.html       # edit profile HTML.
+└── README.md               #
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /blah.jpg                # 
+    /AM01.jpg                # 
+    /BBY01.jpg               #
+    /cube_logo.jpg           #
+    /dtc_logo.jpg            #
+    /generic_steve.jpg       #
+    /home.png                #
+    /my_image.jpg            #
+    /NV01.jpg                #
+    /search_icon.jpg         #
+    /Stories.jpg             #
 ├── scripts                  # Folder for scripts
-    /blah.js                 # 
-├── styles                   # Folder for styles
-    /blah.css                # 
+    /edit_profile.js         # javascript for editprofile html file
+    /firebaseAPI.js          
+    /main.js                 # javascript for main html file
+    /postpage.js             # javascript for postpage html file
 
 Firebase hosting files: 
 ├── .firebaserc...
