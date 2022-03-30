@@ -5,9 +5,9 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to create a sense of community in the online word for those who feel disconnected and lonely in these challenging covid times.
+This browser based web application strives to create a sense of community in the online world for those who feel disconnected and lonely in these challenging covid times.
 
-Our web application, Place, is a social media site where the aim is to promote social connectivity to ease the isolation.
+Our web application, Place, is a social media platform where the aim is to promote social connectivity to ease the isolation.
 
 
 
